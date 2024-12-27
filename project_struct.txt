@@ -1,0 +1,40 @@
+spacestation/                      # 项目根目录
+├── include/                    # 头文件目录
+│   ├── common/                # 公共头文件
+│   ├── state/                 # 状态管理头文件
+│   ├── config/                # 配置管理头文件
+│   ├── control/               # 控制管理头文件
+│   ├── data/                  # 数据管理头文件
+│   ├── drivers/               # 驱动层头文件
+│   │   ├── sensor/           # 传感器驱动
+│   │   ├── output/           # 输出设备驱动
+│   │   └── display/          # 显示设备驱动
+│   ├── business/             # 业务层头文件
+│   ├── network/              # 网络层头文件
+│   ├── services/             # 服务层头文件
+│   └── main.h                # 主程序头文件
+│
+├── src/                       # 源代码目录
+│   ├── state/                # 状态管理实现
+│   ├── config/               # 配置管理实现
+│   ├── control/              # 控制管理实现
+│   ├── data/                 # 数据管理实现
+│   ├── drivers/              # 驱动层实现
+│   │   ├── sensor/          # 传感器驱动
+│   │   ├── output/          # 输出设备驱动
+│   │   └── display/         # 显示设备驱动
+│   ├── business/            # 业务层实现
+│   ├── network/             # 网络层实现
+│   ├── services/            # 服务层实现
+│   └── main.c               # 主程序入口
+│
+├── test/                     # 测试代码目录
+│
+├── docs/                     # 文档目录
+│   ├── 核心代码实现.md        # 核心代码文档
+│   ├── 系统架构和模块关系.md   # 架构文档
+│   └── 项目概述和功能介绍.md   # 概述文档
+│
+├── BUILD.gn                  # 构建配置文件
+├── PATH.md                   # 路径配置文档
+└── README.md                 # 项目说明文件

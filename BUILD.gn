@@ -1,0 +1,445 @@
+static_library("dht11_driver") {
+    sources = [
+        "src/drivers/sensor/dht11.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("oled_driver") {
+    sources = [
+        "src/drivers/display/oled.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("mq2_driver") {
+    sources = [
+        "src/drivers/sensor/mq2.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("bh1750_driver") {
+    sources = [
+        "src/drivers/sensor/bh1750.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("led_driver") {
+    sources = [
+        "src/drivers/output/led.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("buzzer_driver") {
+    sources = [
+        "src/drivers/output/buzzer.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("relay_driver") {
+    sources = [
+        "src/drivers/output/relay.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+}
+
+static_library("wifi_manager") {
+    sources = [
+        "src/network/wifi_manager.c"
+    ]
+    include_dirs = [
+        "include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/platform/os/Huawei_LiteOS/kernel/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/platform/os/Huawei_LiteOS/arch/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/platform/os/Huawei_LiteOS/arch/risc-v/rv32im",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/platform/os/Huawei_LiteOS/components/lib/libc/musl/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/platform/os/Huawei_LiteOS/components/lib/libc/hw/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//kernel/liteos_m/kernel/include", 
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/third_party/lwip_sack/include",
+        "//commonlibrary/utils_lite/include"
+    ]
+}
+
+executable("dht11_test") {
+    sources = [
+        "test/driver_test/dht11_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":dht11_driver"
+    ]
+}
+
+executable("oled_test") {
+    sources = [
+        "test/driver_test/oled_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":oled_driver"
+    ]
+}
+
+executable("mq2_test") {
+    sources = [
+        "test/driver_test/mq2_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":mq2_driver"
+    ]
+}
+
+executable("bh1750_test") {
+    sources = [
+        "test/driver_test/bh1750_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":bh1750_driver"
+    ]
+}
+
+executable("led_test") {
+    sources = [
+        "test/driver_test/led_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":led_driver"
+    ]
+}
+
+executable("buzzer_test") {
+    sources = [
+        "test/driver_test/buzzer_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":buzzer_driver"
+    ]
+}
+
+executable("relay_test") {
+    sources = [
+        "test/driver_test/relay_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":relay_driver"
+    ]
+}
+
+executable("wifi_manager_test") {
+    sources = [
+        "test/network/wifi_manager_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//kernel/liteos_m/arch/include",
+        "//kernel/liteos_m/utils",
+        "//kernel/liteos_m/arch/csky/v2/gcc"
+    ]
+    deps = [
+        ":wifi_manager"
+    ]
+}
+
+static_library("mqtt_client") {
+    sources = [
+        "src/network/mqtt_client.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/components/at",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/components/at/mqtt"
+    ]
+}
+
+executable("mqtt_client_test") {
+    sources = [
+        "test/network/mqtt_client_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/components/at",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/components/at/mqtt"
+    ]
+    deps = [
+        ":mqtt_client"
+    ]
+}
+
+static_library("data_collector") {
+    sources = [
+        "src/data/data_collector.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":dht11_driver",
+        ":mq2_driver",
+        ":bh1750_driver"
+    ]
+}
+
+executable("data_collector_test") {
+    sources = [
+        "test/data/data_collector_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":data_collector"
+    ]
+}
+
+static_library("smart_controller") {
+    sources = [
+        "src/control/smart_controller.c",
+    ]
+    include_dirs = [
+        "include",
+        "//utils/native/lite/include",
+        "//kernel/liteos_m/components/cmsis/2.0",
+    ]
+}
+
+executable("smart_controller_test") {
+    sources = [
+        "test/control/smart_controller_test.c",
+    ]
+    include_dirs = [
+        "include",
+        "//utils/native/lite/include",
+    ]
+    deps = [
+        ":smart_controller",
+    ]
+}
+
+static_library("alarm_manager") {
+    sources = [
+        "src/business/alarm.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":data_collector",
+        ":buzzer_driver",
+        ":led_driver"
+    ]
+}
+
+executable("alarm_test") {
+    sources = [
+        "test/business/alarm_test.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include"
+    ]
+    deps = [
+        ":alarm_manager"
+    ]
+}
+
+static_library("spacestation") {
+    sources = [
+        "src/main.c"
+    ]
+    include_dirs = [
+        "include",
+        "//commonlibrary/utils_lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iothardware/peripheral/interfaces/inner_api",
+        "//kernel/liteos_m/kernel/include",
+        "//device/board/isoftstone/qihang/iot_hardware_hals/include",
+        "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+        "//foundation/communication/wifi_lite/interfaces/wifiservice",
+        "//foundation/communication/mqtt_lite/interfaces/kits",
+        "//foundation/communication/mqtt_lite/interfaces/kits/paho_mqtt",
+        "//kernel/liteos_m/arch/include",
+        "//kernel/liteos_m/utils",
+        "//kernel/liteos_m/arch/csky/v2/gcc"
+    ]
+    deps = [
+        ":dht11_driver",
+        ":oled_driver",
+        ":mq2_driver",
+        ":bh1750_driver",
+        ":led_driver",
+        ":buzzer_driver",
+        ":relay_driver",
+        ":wifi_manager",
+        ":data_collector",
+        ":smart_controller",
+        ":alarm_manager"
+    ]
+}
